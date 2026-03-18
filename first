@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Civil Rights Photography Exhibit</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .intro {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .photo {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .photo img {
+      width: 100%;
+      display: block;
+    }
+
+    .caption {
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      margin: 10% auto;
+      display: block;
+      max-width: 80%;
+    }
+
+    .modal-caption {
+      text-align: center;
+      color: white;
+      padding: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Civil Rights Photography: Witnessing Change</h1>
+</header>
+
+<section class="intro">
+  <p>
+    This virtual exhibit explores the role of photography in shaping public understanding of the Civil Rights Movement. 
+    These images document protest, resistance, and everyday courage.
+  </p>
+</section>
+
+<section class="gallery">
+
+  <div class="photo" onclick="openModal(this)">
+    <img src="https://via.placeholder.com/400" alt="Birmingham Protest">
+    <div class="caption">Birmingham, 1963 – Protesters facing police violence.</div>
+  </div>
+
+  <div class="photo" onclick="openModal(this)">
+    <img src="https://via.placeholder.com/400" alt="March on Washington">
+    <div class="caption">March on Washington, 1963 – A crowd gathers for justice.</div>
+  </div>
+
+  <div class="photo" onclick="openModal(this)">
+    <img src="https://via.placeholder.com/400" alt="Selma">
+    <div class="caption">Selma to Montgomery, 1965 – Crossing the Edmund Pettus Bridge.</div>
+  </div>
+
+</section>
+
+<!-- Modal -->
+<div id="modal" class="modal" onclick="closeModal()">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modal-img">
+  <div class="modal-caption" id="modal-caption"></div>
+</div>
+
+<script>
+  function openModal(element) {
+    document.getElementById("modal").style.display = "block";
+    document.getElementById("modal-img").src = element.querySelector("img").src;
+    document.getElementById("modal-caption").innerText = element.querySelector(".caption").innerText;
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+</script>
+
+<section class="compare-section">
+  <h2>Comparing Perspectives</h2>
+
+  <div class="compare-container">
+    <img src="image1.jpg" class="compare-img">
+    <img src="image2.jpg" class="compare-img overlay" id="overlay">
+
+    <input type="range" min="0" max="100" value="50" id="slider">
+  </div>
+
+  <p class="caption">
+    Compare media portrayals of the same event. How does framing shape public perception?
+  </p>
+</section>
+
+<section class="timeline">
+  <h2>Civil Rights Timeline</h2>
+
+  <input type="range" min="0" max="2" value="0" id="timelineSlider">
+
+  <div id="timelineContent">
+    <h3>1963 – Birmingham Campaign</h3>
+    <p>Images of police brutality shocked the nation and drew global attention.</p>
+  </div>
+</section>
+
+
+</body>
+</html>
