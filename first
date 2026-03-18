@@ -134,32 +134,5 @@
   }
 </script>
 
-<section class="compare-section">
-  <h2>Comparing Perspectives</h2>
-
-  <div class="compare-container">
-    <img src="image1.jpg" class="compare-img">
-    <img src="image2.jpg" class="compare-img overlay" id="overlay">
-
-    <input type="range" min="0" max="100" value="50" id="slider">
-  </div>
-
-  <p class="caption">
-    Compare media portrayals of the same event. How does framing shape public perception?
-  </p>
-</section>
-
-<section class="timeline">
-  <h2>Civil Rights Timeline</h2>
-
-  <input type="range" min="0" max="2" value="0" id="timelineSlider">
-
-  <div id="timelineContent">
-    <h3>1963 – Birmingham Campaign</h3>
-    <p>Images of police brutality shocked the nation and drew global attention.</p>
-  </div>
-</section>
-
-
 </body>
 </html>
